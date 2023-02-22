@@ -13,6 +13,9 @@ class PalindromeChecker:
     def set_strict_mode(self, setting):
         self.strict_mode = setting
 
+    def get_strict_mode(self):
+        return self.strict_mode
+
     def is_palindrome(self, phrase):
         q = DEQ()
         if self.strict_mode:
@@ -31,13 +34,15 @@ class PalindromeChecker:
     
 
 def main():
-    checker = PalindromeChecker
+    checker = PalindromeChecker()
     
     for_checking = ["aba", "abba", "a_ bb +a", "bba"]
 
+    print("TESTING PALINDROME CHECKER:")
+
     for fc in for_checking:
-        print("Palindrome checker!")
-        print("Strict mode is: " + checker.strict_mode)
+        print("\nPalindrome checker!")
+        print("Strict mode is:" , checker.get_strict_mode())
         print("phrase: " + fc)
         if checker.is_palindrome(fc):
             print("It is a palindrome!")
@@ -45,8 +50,8 @@ def main():
             print("Not a palindrome.")
     checker.set_strict_mode(True)
     for fc in for_checking:
-        print("Palindrome checker!")
-        print("Strict mode is: " + checker.strict_mode)
+        print("\nPalindrome checker!")
+        print("Strict mode is:" , checker.get_strict_mode())
         print("phrase: " + fc)
         if checker.is_palindrome(fc):
             print("It is a palindrome!")
