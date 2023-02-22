@@ -30,4 +30,28 @@ class PalindromeChecker:
         return True
     
 
-def main()
+def main():
+    checker = PalindromeChecker
+    
+    for_checking = ["aba", "abba", "a_ bb +a", "bba"]
+
+    for fc in for_checking:
+        print("Palindrome checker!")
+        print("Strict mode is: " + checker.strict_mode)
+        print("phrase: " + fc)
+        if checker.is_palindrome(fc):
+            print("It is a palindrome!")
+        else:
+            print("Not a palindrome.")
+    checker.set_strict_mode(True)
+    for fc in for_checking:
+        print("Palindrome checker!")
+        print("Strict mode is: " + checker.strict_mode)
+        print("phrase: " + fc)
+        if checker.is_palindrome(fc):
+            print("It is a palindrome!")
+        else:
+            print("Not a palindrome.")
+    
+if __name__ == "__main__":
+    main()
